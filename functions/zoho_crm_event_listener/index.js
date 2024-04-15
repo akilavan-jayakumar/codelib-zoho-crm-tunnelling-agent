@@ -13,10 +13,10 @@ module.exports = async (event, context) => {
 
 		let lastGeneratedId = await zcql
 			.executeZCQLQuery(
-				'SELECT Message.ID FROM Message ORDER BY Message.CREATEDTIME LIMIT 1,1'
+				'SELECT Message.ID FROM Message ORDER BY Message.CREATEDTIME DESC LIMIT 1,1'
 			)
 			.then((response) =>
-				response.length ? parseInt(response['Message']['ID']) : 0
+				response.length ? parseInt(response[0]['Message']['ID']) : 0
 			);
 
 		for (const data of eventData) {
