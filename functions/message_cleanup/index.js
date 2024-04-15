@@ -31,10 +31,8 @@ module.exports = async (_, context) => {
 			)
 			.then((result) =>
 				Math.min(
-					parseInt(
-						result[0]['Message']['COUNT(ROWID)'],
-						MAX_MESSAGES_DELETED_PER_EXECUTION
-					)
+					parseInt(result[0]['Message']['COUNT(ROWID)']),
+					MAX_MESSAGES_DELETED_PER_EXECUTION
 				)
 			);
 
