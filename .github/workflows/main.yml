@@ -1,4 +1,4 @@
-name: Zoho CRM Tunnelling Agent Release
+name: Zoho CRM Streaming Agent Release
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     environment: Production
-    name: Creating Zoho CRM Tunnelling Agent Release
+    name: Creating Zoho CRM Streaming Agent Release
     runs-on: ubuntu-latest
     steps:
       - name: Cloning repository
